@@ -1,21 +1,31 @@
 #!/bin/bash
-source "./utils.sh"
-source "./duplicate_scanner.sh"
-source "./duplicate_cleaner.sh"
 
-while true; do
-    clear
-    fancy_header "Duplicate File Cleaner System"
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
-    echo "1) Scan for duplicates (Person A)"
-    echo "2) Clean duplicates (Person B)"
-    echo "3) Exit"
-    read -p "Enter choice: " CH
+info() {
+    echo -e "${BLUE}[INFO]${NC} $1"
+}
 
-    case $CH in
-        1) scan_duplicates ;;
-        2) clean_duplicates ;;
-        3) exit ;;
-        *) warn_msg "Invalid choice" ;;
-    esac
-done
+success() {
+    echo -e "${GREEN}[SUCCESS]${NC} $1"
+}
+
+error() {
+    echo -e "${RED}[ERROR]${NC} $1"
+}
+
+warn_msg() {
+    echo -e "${YELLOW}[WARNING]${NC} $1"
+}
+
+fancy_header() {
+    echo -e "${GREEN}==============================="
+    echo "   $1"
+    echo -e "===============================${NC}"
+}
+

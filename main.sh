@@ -29,7 +29,7 @@ case $CHOICE in
 esac
 
 info "Starting scan..."
-bash scanner.sh "$DIR" "$SCAN_LOG"
+bash duplicate_scanner.sh "$DIR" "$SCAN_LOG"
 
 success "Scan Finished → Log: $SCAN_LOG"
 
