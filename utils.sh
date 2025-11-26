@@ -23,9 +23,3 @@ warn_msg() {
     echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
-fancy_header() {
-    echo -e "${GREEN}==============================="
-    echo "   $1"
-    echo -e "===============================${NC}"
-}
-
